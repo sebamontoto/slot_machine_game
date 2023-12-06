@@ -1,4 +1,4 @@
-package com.example.slotmachinegal
+package com.example.slotmachinegal.gamification
 
 
 import android.animation.AnimatorInflater
@@ -6,15 +6,14 @@ import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
-import android.media.MediaPlayer
 import android.os.CountDownTimer
 import android.util.DisplayMetrics
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.LinearSnapHelper
+import com.example.slotmachinegal.BaseFragment
+import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentQrPayGamificationBinding
-import com.example.slotmachinegal.databinding.ItemCardBinding
 import com.example.slotmachinegal.databinding.ItemGamificationCardBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,62 +23,41 @@ import kotlinx.coroutines.launch
 class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>(
     FragmentQrPayGamificationBinding::inflate) {
 
-    private var screenName = ""
-    private var previousScreenName = ""
     private lateinit var fronAnim: AnimatorSet
     private lateinit var backAnim: AnimatorSet
+
     var prizeAmount: String? = null
-    var customAdapter: QRGamificationAdapter? = null
-    //private var infoGaming: PlayGamification? = null
-    private lateinit var mediaPlayer: MediaPlayer
+
     var isfront = true
+
     private val dataset = arrayOf(
         ItemModel("Blue", R.drawable.new_blue_game, 1),
         ItemModel("Green", R.drawable.new_green_game, 2),
         ItemModel("Orange", R.drawable.new_orange_game, 3),
-        ItemModel("Violet", R.drawable.new_purple_game, 4)
+        ItemModel("Violet", R.drawable.new_purple_game, 4),
+        ItemModel("Violet", R.drawable.new_green_game, 5)
     )
 
     override fun initialize() {
-        setObservers()
-        setupUI()
         setAnimation()
         setList()
         makeSlideClick()
 
-//        binding.gamificationRvMain.addOnItemTouchListener(object :
-//            RecyclerView.SimpleOnItemTouchListener() {
-//            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
-//                return true
-//            }
-//        })
+        binding.gamificationRvMain.scrollToPosition(201)
 
     }
     private fun setAnimation() {
         fronAnim = AnimatorInflater.loadAnimator(context,
-            R.anim.rotation_front) as AnimatorSet
+            R.anim.rotation_front
+        ) as AnimatorSet
         backAnim = AnimatorInflater.loadAnimator(context,
-            R.anim.rotate_back) as AnimatorSet
+            R.anim.rotate_back
+        ) as AnimatorSet
            }
-
-    private fun setObservers() {
-        /*gameVM.buttonAvailability.observe(viewLifecycleOwner) {
-            binding.gamificationButtonPlay.isEnabled = it
-        }
-
-       gameVM.dataGame.observe(viewLifecycleOwner){
-           infoGaming = it
-       if (it.isWinner){
-           prizeAmount=it.amount
-       }
-       }*/
-    }
 
     @SuppressLint("ObjectAnimatorBinding", "SuspiciousIndentation")
     private fun makeSlideClick() {
         binding.gamificationButtonPlay.setOnClickListener {
-            //mediaPlayer = MediaPlayer.create(context, R.raw.rueda)
-            //mediaPlayer.start()
 
             val itemsList =binding.gamificationRvMain.adapter!!.itemCount
             binding.gamificationRvMain.smoothScrollToPosition(itemsList)
@@ -88,20 +66,9 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
             binding.gamificationRvMain.postDelayed({
                 setTiming(itemsList)
             }, 1000)
-                //gameVM.sendPrizeId(infoGaming)
-                //gameVM.callPendingGame()
-                binding.gamificationButtonPlay.isEnabled =false
-
         }
     }
 
-    private fun setupUI() {
-        //payVM.setToolbarTitle(getString(R.string.pagos_qr_gamification_toolbar))
-        //payVM.setToolbarVisibility()
-        //payVM.setToolbarClose(View.INVISIBLE)
-//        binding.mainView.setRenderEffect(RenderEffect.createBlurEffect(10f, 10f, Shader.TileMode.MIRROR))
-//        binding.viewGame.setRenderEffect(RenderEffect.createBlurEffect(10f, 10f, Shader.TileMode.MIRROR))
-    }
     private fun setTiming(newPosition: Int) {
         val totalTimeInMillis: Long = 3020
         val interval: Long = 1000// Intervalo de actualización en milisegundos
@@ -119,7 +86,6 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
                 val middlePosition = (firstVisibleItemPosition + lastVisibleItemPosition) / 2 % dataset.size
                 val middlePositionInDataset = (middlePosition + dataset.size) % dataset.size
                 binding.gamificationRvMain.apply {
-                 //   stopScroll()
                     layoutManager.scrollToPositionWithOffset(middlePositionInDataset,40)
                 }
                 CoroutineScope(Dispatchers.Main).launch {
@@ -145,13 +111,10 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
             val scale = requireContext().resources.displayMetrics.density;
             binding.cardGamingFront.cameraDistance = 8000 * scale
             binding.cardGamingBack.cameraDistance = 8000 * scale
-            //mediaPlayer = MediaPlayer.create(context, R.raw.ganaste)
             binding.txtMessage.text = "Ganaste" + prizeAmount
-            //gameVM.setMessageUserAlert( getString(R.string.pagos_qr_gamification_winner_message ,prizeAmount))
 
             binding.cardGamingBack.alpha = 1F
             binding.imgWinnerLogo.setImageResource(R.drawable.gamification_icon_winner)
-            //mediaPlayer.start()
             fronAnim.setTarget(binding.cardGamingFront)
             fronAnim.start()
             isfront = false
@@ -167,11 +130,6 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
         }
     }
 
-    private fun showDialog(winner: Boolean) {
-//                   GamificationResultsDialog.newInstance(
-//                       winner,
-//                ).show(childFragmentManager,"")
-            }
 
     private fun startSlowdownScrolling(newPosition: Int) {
         val layoutManager = binding.gamificationRvMain.layoutManager as CenterScrollLayoutManager?
@@ -179,7 +137,6 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
         val scroller = SlowSmoothScroller(binding.gamificationRvMain.context)
         scroller.targetPosition = targetPosition
         layoutManager!!.startSmoothScroll(scroller)
-
     }
 
     class SlowSmoothScroller(context: Context?) : LinearSmoothScroller(context) {

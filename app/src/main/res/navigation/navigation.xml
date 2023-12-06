@@ -3,20 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/gameFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/cardFragment"
-        android:name="com.example.slotmachinegal.CardFragment"
+        android:name="com.example.slotmachinegal.gamification.CardFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_card" >
     </fragment>
 
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.slotmachinegal.QrPayGamificationFragment"
-        android:label="fragment_home"
+        android:name="com.example.slotmachinegal.gamification.QrPayGamificationFragment"
+        android:label="game_fragment"
         tools:layout="@layout/fragment_qr_pay_gamification" >
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.slotmachinegal.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_otherSolutionFragment"
+            app:destination="@id/otherSolutionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherSolutionFragment"
+        android:name="com.example.slotmachinegal.test_other_solution.OtherSolutionFragment"
+        android:label="fragment_other_solution"
+        tools:layout="@layout/fragment_other_solution" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.slotmachinegal
+package com.example.slotmachinegal.gamification
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentQrPayGamificationBinding
 import com.example.slotmachinegal.databinding.ItemGamificationCardBinding
 
@@ -28,7 +29,7 @@ class QRGamificationAdapter(
             myConstraintLayout.setBackgroundResource(position.imageResource)
         }
         fun centerImageView() {
-            myConstraintLayout.setBackgroundResource(R.drawable.gamification_card_green )
+            myConstraintLayout.setBackgroundResource(R.drawable.gamification_card_green)
 
             // Obtener las coordenadas y dimensiones del View en el elemento actual
             val viewGameCoordinates = IntArray(2)

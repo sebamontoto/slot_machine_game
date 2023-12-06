@@ -1,12 +1,13 @@
-package com.example.slotmachinegal
+package com.example.slotmachinegal.gamification
 
 // CardFragment.kt
 import android.os.Handler
 import android.os.Looper
 import android.util.DisplayMetrics
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
+import com.example.slotmachinegal.BaseFragment
+import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentCardBinding
 
 class CardFragment : BaseFragment<FragmentCardBinding>(FragmentCardBinding::inflate) {

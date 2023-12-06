@@ -1,4 +1,4 @@
-package com.example.slotmachinegal
+package com.example.slotmachinegal.gamification
 
 //import com.google.gson.annotations.SerializedName
 

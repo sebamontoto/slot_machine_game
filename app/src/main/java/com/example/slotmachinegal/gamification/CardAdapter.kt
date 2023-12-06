@@ -1,4 +1,4 @@
-package com.example.slotmachinegal
+package com.example.slotmachinegal.gamification
 
 // CardAdapter.kt
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.slotmachinegal.R
 
 class CardAdapter(private val cards: List<CardModel>, private val cardHeight: Int) :
         RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
