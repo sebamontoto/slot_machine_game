@@ -1,0 +1,15 @@
+<!-- item_card.xml -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop" />
+
+    <!-- Agrega aquí otros elementos de diseño si es necesario -->
+
+</FrameLayout>
