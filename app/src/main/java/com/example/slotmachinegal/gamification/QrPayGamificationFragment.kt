@@ -39,11 +39,15 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
     )
 
     override fun initialize() {
+        // Agrega el ItemDecoration personalizado
+
+
         setAnimation()
         setList()
         makeSlideClick()
 
-        binding.gamificationRvMain.scrollToPosition(201)
+
+
 
     }
     private fun setAnimation() {
@@ -59,10 +63,10 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
     private fun makeSlideClick() {
         binding.gamificationButtonPlay.setOnClickListener {
 
-            val itemsList =binding.gamificationRvMain.adapter!!.itemCount
+            val itemsList = binding.gamificationRvMain.adapter!!.itemCount
             binding.gamificationRvMain.smoothScrollToPosition(itemsList)
             AppConfig.miConstanteGlobal = 80.0f
-            startSlowdownScrolling(itemsList )
+            startSlowdownScrolling(itemsList)
             binding.gamificationRvMain.postDelayed({
                 setTiming(itemsList)
             }, 1000)
@@ -80,14 +84,19 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
             }
 
             override fun onFinish() {
-                val layoutManager = binding.gamificationRvMain.layoutManager as CenterScrollLayoutManager
+                val layoutManager = binding.gamificationRvMain.layoutManager as LinearLayoutManager
                 val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
                 val lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
                 val middlePosition = (firstVisibleItemPosition + lastVisibleItemPosition) / 2 % dataset.size
                 val middlePositionInDataset = (middlePosition + dataset.size) % dataset.size
+
+                // Calcula el offset para centrar la tarjeta en la pantalla
+                val offset = (binding.gamificationRvMain.height - 150) / 2 // Ajusta según sea necesario
+
                 binding.gamificationRvMain.apply {
-                    layoutManager.scrollToPositionWithOffset(middlePositionInDataset,40)
+                    layoutManager.scrollToPositionWithOffset(middlePositionInDataset, offset)
                 }
+
                 CoroutineScope(Dispatchers.Main).launch {
                     delay(500L)
                     makeAnimation(middlePositionInDataset)
@@ -164,6 +173,9 @@ class QrPayGamificationFragment : BaseFragment<FragmentQrPayGamificationBinding>
                 CenterScrollLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             (layoutManager as CenterScrollLayoutManager).scrollToPositionWithOffset(30,40)
         }
+
+
+        //binding.gamificationRvMain.addItemDecoration(CenterItemDecoration(binding.text))
     }
 
     class CenterScrollLayoutManager(context: Context, orientation: Int, reverseLayout: Boolean): LinearLayoutManager(context, orientation, reverseLayout) {

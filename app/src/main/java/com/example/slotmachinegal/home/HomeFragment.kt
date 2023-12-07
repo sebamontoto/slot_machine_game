@@ -15,6 +15,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.btnTwo.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_otherSolutionFragment)
         }
+
+        binding.btnThree.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_solucion2)
+        }
     }
 
 

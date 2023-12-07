@@ -29,11 +29,19 @@
         <action
             android:id="@+id/action_homeFragment_to_otherSolutionFragment"
             app:destination="@id/otherSolutionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_solucion2"
+            app:destination="@id/solucion2" />
     </fragment>
     <fragment
         android:id="@+id/otherSolutionFragment"
         android:name="com.example.slotmachinegal.test_other_solution.OtherSolutionFragment"
         android:label="fragment_other_solution"
         tools:layout="@layout/fragment_other_solution" />
+    <fragment
+        android:id="@+id/solucion2"
+        android:name="com.example.slotmachinegal.solution_2.Solucion2"
+        android:label="fragment_solucion2"
+        tools:layout="@layout/fragment_solucion2" />
 
 </navigation>

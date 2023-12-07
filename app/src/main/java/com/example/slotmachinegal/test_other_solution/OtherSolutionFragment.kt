@@ -19,21 +19,24 @@ class OtherSolutionFragment : BaseFragment<FragmentOtherSolutionBinding>(
             R.drawable.new_orange_game,
             R.drawable.new_green_game,
             R.drawable.new_purple_game,
-            R.drawable.new_blue_game
+            R.drawable.new_orange_game
         )
 
 
-        // Configura el RecyclerView y su adaptador con la lista de imágenes
+        // Configure RecyclerView and its adapter with the list of images
         val layoutManager = LoopingLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.recyclerView.layoutManager = layoutManager
-        adapter = SlotAdapter(requireActivity(), imageResources)
+        adapter = SlotAdapter(requireContext(), imageResources)
 
         binding.recyclerView.adapter = adapter
 
-        // Configura el botón para iniciar el giro
+        // Set the RecyclerView in the adapter
+        adapter.setRecyclerView(binding.recyclerView)
+
+        // Configure the button to start the scroll
         binding.btnSpin.setOnClickListener {
-            // Inicia el scroll automático rápido durante 4 segundos
-            startFastScroll()
+            // Start the automatic scroll
+            adapter.startScroll()
         }
     }
 

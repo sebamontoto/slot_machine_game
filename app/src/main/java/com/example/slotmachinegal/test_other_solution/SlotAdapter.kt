@@ -2,16 +2,20 @@ package com.example.slotmachinegal.test_other_solution
 
 import android.content.Context
 import android.os.Handler
+import android.os.SystemClock
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Scroller
+import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.ItemSlotBinding
 
-class SlotAdapter(private val context: Context, private val imageResources: List<Int>) : RecyclerView.Adapter<SlotAdapter.SlotViewHolder>() {
+class SlotAdapter(private val context: Context, private val imageResources: List<Int>) :
+    RecyclerView.Adapter<SlotAdapter.SlotViewHolder>() {
 
     private var recyclerView: RecyclerView? = null
     private var scrolling = false
@@ -40,10 +44,21 @@ class SlotAdapter(private val context: Context, private val imageResources: List
         scrolling = false
     }
 
+    fun setRecyclerView(recyclerView: RecyclerView) {
+        this.recyclerView = recyclerView
+    }
+
     private fun scroll() {
         if (scrolling) {
-            recyclerView?.smoothScrollBy(0, 1)
-            Handler().postDelayed({ scroll() }, 16) // Ajusta la velocidad según sea necesario
+            val pixelsToScroll = 10000 // Ajusta según sea necesario
+            val duration = 3000L // Duración total en milisegundos
+
+            val scroller = CustomSmoothScroller(context, duration)
+            scroller.targetPosition = Int.MAX_VALUE / 2
+
+            recyclerView?.layoutManager?.startSmoothScroll(scroller)
+
+            Handler().postDelayed({ stopScroll() }, duration)
         }
     }
 
@@ -52,6 +67,37 @@ class SlotAdapter(private val context: Context, private val imageResources: List
 
         fun bind(imageResource: Int) {
             imageView.setImageResource(imageResource)
+        }
+    }
+
+    /*private class CustomSmoothScroller(context: Context, private val duration: Long) :
+        LinearSmoothScroller(context) {
+
+        override fun calculateTimeForScrolling(dx: Int): Int {
+            // Ajusta el tiempo de desplazamiento
+            val time = super.calculateTimeForScrolling(dx)
+            return (time * (duration / 1000f)).toInt()
+        }
+
+        override fun calculateSpeedPerPixel(displayMetrics: DisplayMetrics?): Float {
+            return 0.5f
+        }
+    }*/
+
+    private class CustomSmoothScroller(context: Context, private val duration: Long) :
+        LinearSmoothScroller(context) {
+
+        private val startTime = SystemClock.uptimeMillis()
+
+        override fun calculateTimeForScrolling(dx: Int): Int {
+            val elapsed = SystemClock.uptimeMillis() - startTime
+            return if (elapsed >= duration) duration.toInt() else elapsed.toInt()
+        }
+
+        override fun calculateSpeedPerPixel(displayMetrics: DisplayMetrics?): Float {
+            val elapsed = SystemClock.uptimeMillis() - startTime
+            val remainingTime = duration - elapsed
+            return if (remainingTime <= 0) 0f else super.calculateSpeedPerPixel(displayMetrics)
         }
     }
 }

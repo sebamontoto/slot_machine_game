@@ -5,7 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 
-class LoopingLayoutManager(context: Context, orientation: Int, reverseLayout: Boolean) : LinearLayoutManager(context, orientation, reverseLayout) {
+class LoopingLayoutManager(context: Context, orientation: Int, reverseLayout: Boolean) :
+    LinearLayoutManager(context, orientation, reverseLayout) {
 
     override fun scrollHorizontallyBy(dx: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
         return if (orientation == HORIZONTAL) {
