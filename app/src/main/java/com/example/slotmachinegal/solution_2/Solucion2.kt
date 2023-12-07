@@ -1,8 +1,5 @@
 package com.example.slotmachinegal.solution_2
 
-import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
-import android.annotation.SuppressLint
 import android.os.Handler
 import android.util.Log
 import com.example.slotmachinegal.R
@@ -10,16 +7,8 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.slotmachinegal.BaseFragment
-import com.example.slotmachinegal.R.anim.rotate_back
-import com.example.slotmachinegal.R.anim.rotation_front
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
-import com.example.slotmachinegal.databinding.ItemGamificationCardBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate) {
 
@@ -76,7 +65,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     //region test2
     private fun test2() {
-        val slideDownAnimation1 = createAnimation(R.anim.slide_down_1)
+        val slideDownAnimation1 = createAnimation2(R.anim.slide_down_1)
 
         // Inicia la animación hacia abajo para la primera tarjeta
         binding.card1.startAnimation(slideDownAnimation1)
@@ -86,7 +75,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         binding.card5.startAnimation(slideDownAnimation1)
     }
 
-    private fun createAnimation(animationResource: Int): Animation {
+    private fun createAnimation2(animationResource: Int): Animation {
         val animation = AnimationUtils.loadAnimation(requireContext(), animationResource)
 
         animation.setAnimationListener(object : Animation.AnimationListener {
@@ -138,7 +127,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         Log.d("Test3", "screenHeight: $screenHeight")
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = 2000 // Ajusta la velocidad/duración según sea necesario
+        slideAnimation.duration = 1000 // Ajusta la velocidad/duración según sea necesario
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
 
