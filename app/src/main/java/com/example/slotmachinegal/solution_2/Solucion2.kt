@@ -1,14 +1,19 @@
 package com.example.slotmachinegal.solution_2
 
+import android.animation.ObjectAnimator
 import android.os.Handler
 import android.util.Log
-import com.example.slotmachinegal.R
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.dynamicanimation.animation.SpringForce
 import com.example.slotmachinegal.BaseFragment
+import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
+
 
 class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate) {
 
@@ -104,7 +109,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         val slideAnimation = createAnimation()
 
-        binding.btnSpin.setOnClickListener{
+        binding.btnPlayGamification.setOnClickListener{
             binding.card1.startAnimation(slideAnimation)
             binding.card2.startAnimation(slideAnimation)
             binding.card3.startAnimation(slideAnimation)
@@ -118,6 +123,10 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         handler.postDelayed({
             slideAnimation.cancel()
+            binding.card5.setImageResource(R.drawable.new_blue_game)
+
+            //makeAnimationBounce()
+
         }, 4000)
     }
 
@@ -127,7 +136,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         Log.d("Test3", "screenHeight: $screenHeight")
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = 1000 // Ajusta la velocidad/duración según sea necesario
+        slideAnimation.duration = 500 // Ajusta la velocidad/duración según sea necesario
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
 
@@ -291,5 +300,46 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 //            backAnim.start()
 //        }
 //    }
+
+    private fun makeAnimationBounce(){
+        //val originalY = binding.card5.y
+
+//        // Crear un animador de posición en el eje Y
+//        val bounceAnimator = ObjectAnimator.ofFloat(binding.card5, "y", originalY, originalY - 100f, originalY)
+//        bounceAnimator.duration = 3000
+//        bounceAnimator.start()
+
+        val originalY = binding.card5.y
+
+        // Configurar la posición original de la ImageView
+        binding.card5.translationY = originalY
+
+        // Crear una animación de rebote en el eje Y
+        val bounceAnimation = SpringAnimation(binding.card5, DynamicAnimation.TRANSLATION_Y)
+        val springForce = SpringForce()
+        springForce.dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
+        springForce.stiffness = SpringForce.STIFFNESS_LOW
+        bounceAnimation.spring = springForce
+
+        binding.card5.post {
+            // Configurar el desplazamiento total de 50px (25px arriba y 25px abajo)
+            val displacement = 50f
+            val duration = 3000L // Duración total de la animación en milisegundos (3 segundos)
+
+            // Configurar animación hacia arriba
+            bounceAnimation.animateToFinalPosition(-displacement)
+
+            // Configurar animación hacia abajo después de un retraso
+            bounceAnimation.addEndListener { _, _, _, _ ->
+                binding.card5.postDelayed({
+                    bounceAnimation.animateToFinalPosition(displacement)
+                }, 1000) // Agregar un retraso de 1 segundo (1000 milisegundos)
+            }
+
+            // Iniciar la animación
+            bounceAnimation.start()
+        }
+
+    }
 
 }
