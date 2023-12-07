@@ -1,5 +1,8 @@
 package com.example.slotmachinegal.solution_2
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
+import android.annotation.SuppressLint
 import android.os.Handler
 import android.util.Log
 import com.example.slotmachinegal.R
@@ -7,9 +10,16 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.slotmachinegal.BaseFragment
+import com.example.slotmachinegal.R.anim.rotate_back
+import com.example.slotmachinegal.R.anim.rotation_front
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
-
+import com.example.slotmachinegal.databinding.ItemGamificationCardBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate) {
 
@@ -23,8 +33,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         test3()
         //test4()
     }
-
-
 
     //region test1
     private fun test1(){
@@ -130,7 +138,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         Log.d("Test3", "screenHeight: $screenHeight")
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = 200 // Ajusta la velocidad/duración según sea necesario
+        slideAnimation.duration = 2000 // Ajusta la velocidad/duración según sea necesario
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
 
@@ -266,5 +274,33 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     }
 
     //endregion
+
+//    @SuppressLint("ResourceType")
+//    private fun makeAnimation() {
+//
+//        val frontAnim = AnimatorInflater.loadAnimator(context, rotation_front) as AnimatorSet
+//        val backAnim = AnimatorInflater.loadAnimator(context, rotate_back) as AnimatorSet
+//
+//        val binding = ItemGamificationCardBinding.bind()
+//        val scale = requireContext().resources.displayMetrics.density;
+//        binding.cardGamingFront.cameraDistance = 8000 * scale
+//        binding.cardGamingBack.cameraDistance = 8000 * scale
+//        binding.txtMessage.text = "Ganaste" + "$500"
+//
+//        binding.cardGamingBack.alpha = 1F
+//        binding.imgWinnerLogo.setImageResource(R.drawable.gamification_icon_winner)
+//        frontAnim.setTarget(binding.cardGamingFront)
+//        frontAnim.start()
+//        isfront = false
+//
+//        val scope = CoroutineScope(Dispatchers.Main)
+//        scope.launch{
+//            delay(2000)
+//            //showDialog(infoGaming!!.isWinner)
+//            binding.cardGamingFront.alpha = 1F
+//            backAnim.setTarget(binding.cardGamingFront)
+//            backAnim.start()
+//        }
+//    }
 
 }
