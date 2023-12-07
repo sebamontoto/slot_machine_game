@@ -119,15 +119,15 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             binding.card7.startAnimation(slideAnimation)
             binding.card8.startAnimation(slideAnimation)
             binding.card9.startAnimation(slideAnimation)
+
+            handler.postDelayed({
+                slideAnimation.cancel()
+                binding.card5.setImageResource(R.drawable.new_blue_game)
+
+                //makeAnimationBounce()
+
+            }, 4000)
         }
-
-        handler.postDelayed({
-            slideAnimation.cancel()
-            binding.card5.setImageResource(R.drawable.new_blue_game)
-
-            //makeAnimationBounce()
-
-        }, 4000)
     }
 
     private fun createAnimation(): TranslateAnimation {
