@@ -124,9 +124,9 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 slideAnimation.cancel()
                 binding.card5.setImageResource(R.drawable.new_blue_game)
 
-                //makeAnimationBounce()
+                makeAnimationBounce()
 
-            }, 4000)
+            }, 2000)
         }
     }
 
@@ -136,7 +136,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         Log.d("Test3", "screenHeight: $screenHeight")
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = 500 // Ajusta la velocidad/duración según sea necesario
+        slideAnimation.duration = 200 // Ajusta la velocidad/duración según sea necesario
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
 
@@ -302,6 +302,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 //    }
 
     private fun makeAnimationBounce(){
+        val binding = binding.layoutCards
         //val originalY = binding.card5.y
 
 //        // Crear un animador de posición en el eje Y
@@ -309,31 +310,28 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 //        bounceAnimator.duration = 3000
 //        bounceAnimator.start()
 
-        val originalY = binding.card5.y
+        val originalY = binding.y
 
         // Configurar la posición original de la ImageView
-        binding.card5.translationY = originalY
+        binding.translationY = originalY
 
         // Crear una animación de rebote en el eje Y
-        val bounceAnimation = SpringAnimation(binding.card5, DynamicAnimation.TRANSLATION_Y)
+        val bounceAnimation = SpringAnimation(binding, DynamicAnimation.TRANSLATION_Y)
         val springForce = SpringForce()
         springForce.dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
         springForce.stiffness = SpringForce.STIFFNESS_LOW
         bounceAnimation.spring = springForce
 
-        binding.card5.post {
+        binding.post {
             // Configurar el desplazamiento total de 50px (25px arriba y 25px abajo)
             val displacement = 50f
-            val duration = 3000L // Duración total de la animación en milisegundos (3 segundos)
 
             // Configurar animación hacia arriba
             bounceAnimation.animateToFinalPosition(-displacement)
 
             // Configurar animación hacia abajo después de un retraso
             bounceAnimation.addEndListener { _, _, _, _ ->
-                binding.card5.postDelayed({
-                    bounceAnimation.animateToFinalPosition(displacement)
-                }, 1000) // Agregar un retraso de 1 segundo (1000 milisegundos)
+                bounceAnimation.animateToFinalPosition(0f)
             }
 
             // Iniciar la animación
