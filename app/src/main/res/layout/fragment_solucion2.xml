@@ -20,14 +20,14 @@
             android:background="@drawable/vidrio"
             android:elevation="2dp" />
 
-        <Button
-            android:id="@+id/btnSpin"
-            android:text="Aiuda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+<!--        <Button-->
+<!--            android:id="@+id/btnSpin"-->
+<!--            android:text="Aiuda"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_cards"
@@ -39,6 +39,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/card01"
+                android:scaleType="centerCrop"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/card0"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/new_green_game" />
+            <ImageView
+                android:id="@+id/card0"
+                android:scaleType="centerCrop"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/card1"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/new_green_game" />
 
             <ImageView
                 android:id="@+id/card1"
@@ -143,17 +167,18 @@
                 android:src="@drawable/new_blue_game" />
 
             <ImageView
-                android:id="@+id/card9"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card8"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
+            android:id="@+id/card9"
+            android:scaleType="centerCrop"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card8"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/new_green_game" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -170,7 +195,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/material_dynamic_primary30"
+        android:background="@color/black"
         android:text="Jugar"
         android:textAllCaps="false"
         android:textColor="@color/white"

@@ -57,7 +57,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@color/material_dynamic_primary30"
+            android:background="@color/black"
             android:text="Jugar"
             android:textAllCaps="false"
             android:textColor="@color/white"
