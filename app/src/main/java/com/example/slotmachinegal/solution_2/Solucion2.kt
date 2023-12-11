@@ -30,8 +30,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         val slideAnimation = createAnimation()
 
         binding.btnPlayGamification.setOnClickListener {
-            binding.card8.startAnimation(slideAnimation)
-            binding.card9.startAnimation(slideAnimation)
             binding.card01.startAnimation(slideAnimation)
             binding.card0.startAnimation(slideAnimation)
             binding.card1.startAnimation(slideAnimation)
