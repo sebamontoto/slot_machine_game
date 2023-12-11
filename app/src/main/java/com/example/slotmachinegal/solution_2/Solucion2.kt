@@ -1,30 +1,30 @@
 package com.example.slotmachinegal.solution_2
 
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
-import android.animation.TimeInterpolator
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.view.animation.DecelerateInterpolator
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
-import androidx.dynamicanimation.animation.DynamicAnimation
-import androidx.dynamicanimation.animation.SpringAnimation
-import androidx.dynamicanimation.animation.SpringForce
 import com.example.slotmachinegal.BaseFragment
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 
 
-class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate) {
+class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate), Animation.AnimationListener {
 
     private lateinit var cards: MutableList<ImageView>
     private val handler = Handler()
     var velocity: Long = 1000L
-
+    private lateinit var animation1: Animation
+    private lateinit var animation2: Animation
+    private var isFrontOfCardShowing = true
     override fun initialize() {
         test3()
     }
@@ -36,6 +36,8 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         val slideAnimation = createAnimation()
 
         binding.btnPlayGamification.setOnClickListener{
+            binding.card8.startAnimation(slideAnimation)
+            binding.card9.startAnimation(slideAnimation)
             binding.card01 .startAnimation(slideAnimation)
             binding.card0.startAnimation(slideAnimation)
             binding.card1.startAnimation(slideAnimation)
@@ -45,9 +47,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             binding.card5.startAnimation(slideAnimation)
             binding.card6.startAnimation(slideAnimation)
             binding.card7.startAnimation(slideAnimation)
-            binding.card8.startAnimation(slideAnimation)
-            binding.card9.startAnimation(slideAnimation)
-
 
             handler.postDelayed({
                 slideAnimation.cancel()
@@ -55,18 +54,25 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 makeAnimationBounce()
 
             }, 4000)
+
+
         }
     }
+
+    private  fun makeAnimation() {
+        animation1 = AnimationUtils.loadAnimation(context, R.anim.to_middle)
+        animation1.setAnimationListener(this)
+            binding.card5.startAnimation(animation1)
+    }
+
 
     private fun createAnimation(): TranslateAnimation {
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
         val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.75).toFloat()
 
-        Log.d("Test3", "screenHeight: $screenHeight")
-        Log.d("Test3", "screenHeightReducida: $screenHeightReducida")
 
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeight)
-        slideAnimation.duration = 1000 // Ajusta la velocidad/duración según sea necesario
+        slideAnimation.duration = 200 // Ajusta la velocidad/duración según sea necesario
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
 
@@ -83,19 +89,14 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 } catch (e: Exception){
 
                 }
-
             }
-
             override fun onAnimationRepeat(animation: Animation?) {
-                slideAnimation.duration += 100            }
+               // slideAnimation.duration += 100
+            }
         })
 
         return slideAnimation
     }
-    //endregion
-
-
-
     //endregion
 
 //    @SuppressLint("ResourceType")
@@ -150,8 +151,32 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             // Detener la animación después de un breve tiempo
             Handler(Looper.getMainLooper()).postDelayed({
                 bounceAnimator.end()
+                makeAnimation()
             }, 1700) // Detener después de X milisegundos
         }
+    }
+
+    override fun onAnimationStart(p0: Animation?) {
+    }
+
+    override fun onAnimationEnd(animation: Animation?) {
+        if (animation === animation1) {
+            // check whether the front of the card is showing
+            if (isFrontOfCardShowing) {
+                binding.card5.setImageResource(R.drawable.loser)
+            } else {
+            }
+            // stop the animation of the ImageView
+            binding.card5.clearAnimation()
+          //  binding.card5.animation = animation2
+
+      //      binding.card5.startAnimation(animation2)
+        } else {
+
+        }
+    }
+
+    override fun onAnimationRepeat(p0: Animation?) {
     }
 
 }
