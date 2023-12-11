@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_main"
@@ -20,172 +20,180 @@
             android:background="@drawable/vidrio"
             android:elevation="2dp" />
 
-<!--        <Button-->
-<!--            android:id="@+id/btnSpin"-->
-<!--            android:text="Aiuda"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+                <Button
+                    android:id="@+id/btnSpin"
+                    android:text="Aiuda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_cards"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            <ImageView
-                android:id="@+id/card8"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card9"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/new_blue_game" />
 
             <ImageView
-                android:id="@+id/card9"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card01"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
-            <ImageView
                 android:id="@+id/card01"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card0"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_blue_game"
+                app:layout_constraintBottom_toTopOf="@id/card0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <ImageView
                 android:id="@+id/card0"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card1"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_purple_game"
+                app:layout_constraintBottom_toTopOf="@id/card1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/card1"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/new_purple_game"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_green_game"
+                app:layout_constraintBottom_toTopOf="@id/card2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card2" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/card2"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/card3"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_orange_game"
+                app:layout_constraintBottom_toTopOf="@id/card3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/card3"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_blue_game"
                 app:layout_constraintBottom_toTopOf="@id/card4"
-                android:src="@drawable/new_blue_game" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/card4"
-                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_purple_game"
                 app:layout_constraintBottom_toTopOf="@id/card5"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/new_orange_game" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
-                android:elevation="-1dp"
                 android:id="@+id/card5"
-                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
+                android:elevation="-1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_green_game"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:src="@drawable/new_purple_game" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/card6"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_orange_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card5"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/new_green_game" />
+                app:layout_constraintTop_toBottomOf="@id/card5" />
 
             <ImageView
                 android:id="@+id/card7"
-                android:scaleType="centerCrop"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_blue_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card6"
+                app:layout_constraintTop_toBottomOf="@id/card6" />
+
+            <ImageView
+                android:id="@+id/card8"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/new_orange_game" />
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_purple_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card7" />
 
+            <ImageView
+                android:id="@+id/card9"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_green_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card8" />
 
-
-
-
+            <ImageView
+                android:id="@+id/card10"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/new_orange_game"
+                app:layout_constraintBottom_toTopOf="@id/card9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
