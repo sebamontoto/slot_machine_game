@@ -1,7 +1,9 @@
 package com.example.slotmachinegal.solution_2
 
 import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -301,43 +303,32 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 //        }
 //    }
 
-    private fun makeAnimationBounce(){
+    private fun makeAnimationBounce() {
         val binding = binding.layoutCards
-        //val originalY = binding.card5.y
-
-//        // Crear un animador de posición en el eje Y
-//        val bounceAnimator = ObjectAnimator.ofFloat(binding.card5, "y", originalY, originalY - 100f, originalY)
-//        bounceAnimator.duration = 3000
-//        bounceAnimator.start()
 
         val originalY = binding.y
 
-        // Configurar la posición original de la ImageView
-        binding.translationY = originalY
+        // Crear un animador de valores para simular el rebote
+        val bounceAnimator = ValueAnimator.ofFloat(-50f, 50f, -50f, 0f)
+        bounceAnimator.duration = 500 // Duración total de la animación en milisegundos
+        bounceAnimator.repeatCount = ValueAnimator.INFINITE // Repetir dos veces (un rebote corto)
+        bounceAnimator.repeatMode = ValueAnimator.REVERSE // Invertir la animación en cada repetición
 
-        // Crear una animación de rebote en el eje Y
-        val bounceAnimation = SpringAnimation(binding, DynamicAnimation.TRANSLATION_Y)
-        val springForce = SpringForce()
-        springForce.dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
-        springForce.stiffness = SpringForce.STIFFNESS_LOW
-        bounceAnimation.spring = springForce
-
-        binding.post {
-            // Configurar el desplazamiento total de 50px (25px arriba y 25px abajo)
-            val displacement = 50f
-
-            // Configurar animación hacia arriba
-            bounceAnimation.animateToFinalPosition(-displacement)
-
-            // Configurar animación hacia abajo después de un retraso
-            bounceAnimation.addEndListener { _, _, _, _ ->
-                bounceAnimation.animateToFinalPosition(0f)
-            }
-
-            // Iniciar la animación
-            bounceAnimation.start()
+        // Actualizar la posición de la ImageView durante la animación
+        bounceAnimator.addUpdateListener { animator ->
+            val value = animator.animatedValue as Float
+            binding.translationY = originalY + value
         }
 
+        // Iniciar la animación cuando la vista esté lista
+        binding.post {
+            bounceAnimator.start()
+
+            // Detener la animación después de un breve tiempo
+            Handler(Looper.getMainLooper()).postDelayed({
+                bounceAnimator.end()
+            }, 1700) // Detener después de X milisegundos
+        }
     }
 
 }
