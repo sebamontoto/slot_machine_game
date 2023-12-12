@@ -3,13 +3,11 @@ package com.example.slotmachinegal.solution_2
 import android.animation.ValueAnimator
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
-import android.widget.ImageView
 import com.example.slotmachinegal.BaseFragment
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
@@ -25,12 +23,17 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     override fun initialize() {
         test3()
     }
+
     //region test3
     private fun test3() {
 
-        val slideAnimation = createAnimation()
+
 
         binding.btnPlayGamification.setOnClickListener {
+            val slideAnimation = createAnimation()
+
+            shuffleArrayImages()
+
             binding.card01.startAnimation(slideAnimation)
             binding.card0.startAnimation(slideAnimation)
             binding.card1.startAnimation(slideAnimation)
@@ -82,7 +85,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
             override fun onAnimationRepeat(animation: Animation?) {
                 slideAnimation.duration = slideAnimation.duration * 2
-
             }
         })
 
@@ -142,6 +144,26 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     }
 
     override fun onAnimationRepeat(p0: Animation?) {
+    }
+
+    private fun shuffleArrayImages(){
+        val arrayImages = listOf(R.drawable.new_blue_game, R.drawable.new_orange_game, R.drawable.new_green_game, R.drawable.new_purple_game)
+        val arrayImagesRandom = arrayImages.shuffled()
+
+        with(binding){
+            card01.setImageResource(arrayImagesRandom[0])
+            card0.setImageResource(arrayImagesRandom[1])
+            card1.setImageResource(arrayImagesRandom[2])
+            card2.setImageResource(arrayImagesRandom[3])
+            card3.setImageResource(arrayImagesRandom[0])
+            card4.setImageResource(arrayImagesRandom[1])
+            imgPrize.setImageResource(arrayImagesRandom[2])
+            card6.setImageResource(arrayImagesRandom[3])
+            card7.setImageResource(arrayImagesRandom[0])
+            card8.setImageResource(arrayImagesRandom[1])
+            card9.setImageResource(arrayImagesRandom[2])
+            card10.setImageResource(arrayImagesRandom[3])
+        }
     }
 
 }

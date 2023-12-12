@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/fondo"
         app:layout_constraintBottom_toTopOf="@id/btn_play_gamification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,15 +20,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/vidrio"
             android:elevation="2dp" />
-
-                <Button
-                    android:id="@+id/btnSpin"
-                    android:text="Aiuda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_cards"
@@ -45,9 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_blue_game"
                 app:layout_constraintBottom_toTopOf="@id/card0"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,9 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_purple_game"
                 app:layout_constraintBottom_toTopOf="@id/card1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,9 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_green_game"
                 app:layout_constraintBottom_toTopOf="@id/card2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -84,9 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_orange_game"
                 app:layout_constraintBottom_toTopOf="@id/card3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +80,7 @@
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_blue_game"
                 app:layout_constraintBottom_toTopOf="@id/card4"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,9 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_purple_game"
                 app:layout_constraintBottom_toTopOf="@id/card5"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,11 +102,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:elevation="-1dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -135,7 +116,7 @@
                         android:id="@+id/img_prize"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitXY"
                         android:src="@drawable/new_green_game" />
 
                     <TextView
@@ -156,9 +137,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
             </androidx.cardview.widget.CardView>
 
             <ImageView
@@ -166,9 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_orange_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -179,9 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_blue_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -192,9 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_purple_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,9 +177,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_green_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -218,9 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_centerHorizontal="true"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:src="@drawable/new_orange_game"
                 app:layout_constraintBottom_toTopOf="@id/card9"
                 app:layout_constraintEnd_toEndOf="parent"
