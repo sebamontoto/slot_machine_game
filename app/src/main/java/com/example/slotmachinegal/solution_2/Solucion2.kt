@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
+import android.widget.ImageView
 import com.example.slotmachinegal.BaseFragment
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
@@ -66,7 +67,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     private fun createAnimation(): TranslateAnimation {
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
-        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.99).toFloat()
+        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.95).toFloat()
 
 
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
@@ -80,7 +81,12 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                // Al finalizar la animación, vuelve a colocar la tarjeta arriba
+                try {
+                    val card = animation?.fillAfter as ImageView
+                    card.translationY = 0f
+                } catch (e: Exception){
+
+                }
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
