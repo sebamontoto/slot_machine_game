@@ -50,6 +50,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnThree" />
 
+        <!-- Tu TextView sobre la imagen -->
+        <ImageView
+            android:id="@+id/imagenView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/winner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFour"
+            app:layout_constraintVertical_bias="0.159" />
+
+        <TextView
+            android:id="@+id/textoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#80000000"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Tu Texto Aquí"
+            android:textColor="#bababa"
+            android:textSize="18sp"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="78dp"
+            tools:layout_editor_absoluteY="477dp" />
+
+        <!-- Color del texto -->
+        <!-- Tamaño del texto -->
+        <!-- Centrar el TextView en el centro del RelativeLayout -->
+         <!-- Centrar el texto dentro del TextView -->
+         <!-- Fondo semi-transparente para mejorar la visibilidad del texto -->
+         <!-- Espaciado interior del TextView -->
+         <!-- Opcional: visibilidad inicial del TextView -->
+        />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

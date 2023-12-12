@@ -4,6 +4,7 @@ import android.animation.ValueAnimator
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
@@ -54,6 +55,8 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     private  fun makeAnimation() {
         animation1 = AnimationUtils.loadAnimation(context, R.anim.to_middle)
+        animation2 = AnimationUtils.loadAnimation(context, R.anim.from_middle)
+        animation2.setAnimationListener(this)
         animation1.setAnimationListener(this)
         binding.card5.startAnimation(animation1)
     }
@@ -124,12 +127,13 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         if (animation === animation1) {
             // check whether the front of the card is showing
             if (isFrontOfCardShowing) {
-                binding.card5.setImageResource(R.drawable.loser)
+                binding.imgPrize.setImageResource(R.drawable.winner)
+                binding.txtAmount.visibility= View.VISIBLE
             } else {
             }
             // stop the animation of the ImageView
             binding.card5.clearAnimation()
-          //  binding.card5.animation = animation2
+            binding.card5.animation = animation2
 
       //      binding.card5.startAnimation(animation2)
         } else {

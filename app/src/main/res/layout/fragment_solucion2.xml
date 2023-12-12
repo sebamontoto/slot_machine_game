@@ -117,17 +117,49 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card5"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:elevation="-1dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/new_green_game"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/gaming_back">
+                    <ImageView
+                        android:id="@+id/img_prize"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/new_green_game" />
+
+                    <TextView
+                        android:id="@+id/txt_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="32dp"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="!Ganaste \n $10.000!"
+                        android:textColor="#0A0909"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
 
             <ImageView
                 android:id="@+id/card6"
