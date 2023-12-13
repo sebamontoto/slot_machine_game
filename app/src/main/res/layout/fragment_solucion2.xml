@@ -47,6 +47,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/fondo"
+        app:layout_constraintTop_toBottomOf="@id/pago_qr_toolbar"
         app:layout_constraintBottom_toTopOf="@id/btn_play_gamification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
