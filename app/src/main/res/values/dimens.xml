@@ -1,0 +1,272 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <dimen name="on_boarding_text_title">20sp</dimen>
+    <dimen name="on_boarding_text">16sp</dimen>
+    <dimen name="on_boarding_top_padding">64dp</dimen>
+    <dimen name="on_boarding_title_text_top_padding">50dp</dimen>
+    <dimen name="padding_on_boarding_wizard_status_tamanio_boton">13dp</dimen>
+    <dimen name="padding_on_boarding_wizard_status_tamanio_top">30dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="large">16dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="splash_version">16sp</dimen>
+
+    <!-- Dimensiones para el Splash -->
+    <dimen name="on_boarding_logo_heigth">300dp</dimen>
+    <dimen name="on_boarding_logo_width">360dp</dimen>
+    <dimen name="splash_logo_heigth_massive">61.8dp</dimen>
+
+    <!-- Dimensiones para Logos Historial de Pagos Tarjetas -->
+    <dimen name="height_amex">22dp</dimen>
+    <dimen name="height_visa">14dp</dimen>
+    <dimen name="height_master">18dp</dimen>
+    <dimen name="width_amex">44dp</dimen>
+    <dimen name="width_visa">28dp</dimen>
+    <dimen name="width_master">36dp</dimen>
+
+    <!-- Dimensiones para onBoarding Activar Ubicacion-->
+    <dimen name="continuar_sin_ubicacion_size">14sp</dimen>
+
+    <!-- Dimensiones para el Login -->
+    <dimen name="login_text_size">16sp</dimen>
+    <dimen name="login_padding_heigth">55dp</dimen>
+    <dimen name="login_padding_width">310dp</dimen>
+    <dimen name="login_padding_text_into_inputs">17dp</dimen>
+
+    <!-- Dimensiones para el Tarjetas de Cuentas -->
+    <dimen name="tarjeta_padding_top">8dp</dimen>
+    <dimen name="tarjeta_tamanio_titulo_cuenta">24sp</dimen>
+    <dimen name="tarjeta_tamanio_titulo_cuenta_predeterminada">20sp</dimen>
+    <dimen name="tarjeta_tamanio_cantidad_cuenta">24sp</dimen>
+    <dimen name="tarjeta_tamanio_numero_de_cuenta">14sp</dimen>
+    <dimen name="tarjeta_linea_divisoria">1dp</dimen>
+    <dimen name="tarjeta_tamanio_de_contenedor_ultimos_mensajes">210dp</dimen>
+    <dimen name="tarjeta_tamanio_de_contenedor_ultimos2_mensajes">160dp</dimen>
+    <dimen name="tarjeta_tamanio_de_contenedor_ultimos1_mensajes">80dp</dimen>
+    <dimen name="titulo_contenedor_tamanio_maximo">150dp</dimen>
+    <dimen name="filtro_radio_button_alto">48dp</dimen>
+    <dimen name="paddding_left_radio_button">34dp</dimen>
+
+    <dimen name="cuentas_left_margin">17dp</dimen>
+    <dimen name="texto_movimientos">16sp</dimen>
+    <dimen name="texto_movimientos_fecha">14sp</dimen>
+
+    <dimen name="card_cuentra_predeterminada_left_margin">60dp</dimen>
+    <dimen name="icono_mensaje_error">150dp</dimen>
+    <dimen name="icono_barcode_mensaje_error">150dp</dimen>
+
+    <!-- Dimensiones para ATM -->
+    <dimen name="atm_card_size_bankName">20sp</dimen>
+    <dimen name="atm_details_size_bankName">30sp</dimen>
+    <dimen name="atm_details_size_description">14sp</dimen>
+
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">10sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">10sp</dimen>
+    <dimen name="card_monto_inversiones">16sp</dimen>
+
+    <!-- Dimensiones Home -->
+    <dimen name="margin_height_saldos">122dp</dimen>
+    <dimen name="margin_height_saldo_pesos">60dp</dimen>
+    <dimen name="margin_height_error_account">76dp</dimen>
+    <dimen name="ico_vertical">48dp</dimen>
+    <dimen name="ico_horizontal">24dp</dimen>
+    <dimen name="card_vertical_height">64dp</dimen>
+    <dimen name="margin_ico_vertical">24dp</dimen>
+    <dimen name="text_size_buttons_vertical">16sp</dimen>
+    <dimen name="text_size_buttons_horizontal">16sp</dimen>
+    <dimen name="shimmer_heigh_layout">85dp</dimen>
+    <dimen name="rtd_height">140dp</dimen>
+    <dimen name="margin_home_start_end">16dp</dimen>
+    <dimen name="tarjeta_width_button_basic">80dp</dimen>
+
+    <!-- Dimensiones Tarjetas Overview -->
+    <dimen name="margin_height_error_tarjeta_max">110dp</dimen>
+    <dimen name="margin_height_error_tarjeta_min">5dp</dimen>
+    <dimen name="margin_height_response_tarjeta_max">180dp</dimen>
+    <dimen name="margin_height_response_tarjeta_min">120dp</dimen>
+    <dimen name="home_tarjetas_height_status">120dp</dimen>
+
+    <!-- Dimensiones alta celular seguro -->
+    <dimen name="horizontal_margin">24dp</dimen>
+    <dimen name="default_title_font">20sp</dimen>
+    <dimen name="default_subtitle_font">14sp</dimen>
+
+    <dimen name="modo_cuenta_items_separator">12dp</dimen>
+
+    <!-- Dimensiones Pago Overview -->
+    <dimen name="margin_overview_pago">16dp</dimen>
+    <dimen name="text_medium_overview_pago">16sp</dimen>
+    <dimen name="text_small_overview_pago">14sp</dimen>
+    <dimen name="overview_pago_container_icon">40dp</dimen>
+    <dimen name="overview_pago_item_height">72dp</dimen>
+    <dimen name="spacing_section_overview">32dp</dimen>
+
+    <!-- Overview nuevo diseño -->
+    <dimen name="spacing_overview_card_top_margen">8dp</dimen>
+    <dimen name="spacing_overview_tour_options_account_left">28dp</dimen>
+    <dimen name="spacing_overview_tour_options_account_right">52dp</dimen>
+    <dimen name="spacing_overview_tour_options_account_top">72dp</dimen>
+    <dimen name="spacing_overview_tour_options_account_bottom">12dp</dimen>
+
+    <!-- Esta medida tiene que ser siempre el mitad de spacing_overview_card -->
+    <dimen name="spacing_overview_card_half">8dp</dimen>
+    <dimen name="spacing_overview_card">16dp</dimen>
+    <!-- Esta medida tiene que ser siempre el doble de spacing_overview_card -->
+    <!-- Se usa en fragment_overview_tarjetas.xml -->
+    <dimen name="spacing_overview_card_double">32dp</dimen>
+    <dimen name="item_decoration_accesos_directos">2dp</dimen>
+    <dimen name="item_decoration_cuentas">72dp</dimen>
+    <dimen name="card_overview_radius">10dp</dimen>
+    <dimen name="card_overview_elevation">4dp</dimen>
+    <dimen name="card_overview_size">48dp</dimen>
+    <dimen name="item_acceso_directo_overview_size">80dp</dimen>
+    <dimen name="item_rtd_height">120dp</dimen>
+    <dimen name="spacing_between_views_overview">12dp</dimen>
+    <dimen name="spacing_between_texts_overview">8dp</dimen>
+    <dimen name="item_acceso_directo_size">26dp</dimen>
+    <dimen name="padding_end_overview_tarjetas">90dp</dimen>
+    <dimen name="padding_end_overview_rtd">100dp</dimen>
+    <dimen name="overview_banner_height">64dp</dimen>
+    <dimen name="spacing_between_section">24dp</dimen>
+    <dimen name="spacing_card_recommendation">16dp</dimen>
+
+    <!-- REPO TARJETAS -->
+    <dimen name="repo_subtitle_margintop">24dp</dimen>
+    <dimen name="repo_subtitle_marginleft">16dp</dimen>
+    <dimen name="repo_subtitle_marginright">16dp</dimen>
+    <dimen name="repo_reminder_content_margintop">24dp</dimen>
+
+    <!-- Menú Más -->
+    <dimen name="margin_menu_mas">16dp</dimen>
+    <dimen name="icon_overview_pagos">32dp</dimen>
+
+    <!-- Transferencias -->
+    <dimen name="t_margin_preconfirmacion">25dp</dimen>
+
+
+    <!-- Dimensiones para el OnBoardingModo -->
+    <dimen name="on_boarding_modo_heigth">200dp</dimen>
+    <dimen name="on_boarding_modo_width">200dp</dimen>
+    <dimen name="spacing_none">0dp</dimen>
+    <dimen name="spacing_tiniest">1dp</dimen>
+    <dimen name="spacing_tiny">1dp</dimen>
+    <dimen name="spacing_small">2dp</dimen>
+    <dimen name="spacing_medium">4dp</dimen>
+    <dimen name="spacing_medium_more">8dp</dimen>
+    <dimen name="spacing_medium_extra">12dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_large_extra">22dp</dimen>
+    <dimen name="spacing_big">28dp</dimen>
+    <dimen name="spacing_big_extra">32dp</dimen>
+    <dimen name="spacing_huge">38dp</dimen>
+    <dimen name="spacing_huge_extra">46dp</dimen>
+    <dimen name="spacing_largest">54dp</dimen>
+    <dimen name="spacing_largest_extra">64dp</dimen>
+
+
+    <!-- Transferencias -->
+    <dimen name="margin_start_detalle_transferencia">25dp</dimen>
+    <dimen name="height_container_detalle_transferencia">60dp</dimen>
+    <dimen name="transferencias_button_radius">8dp</dimen>
+    <dimen name="spacing_label_preconf">8dp</dimen>
+
+    <!-- Login Onboarding -->
+    <dimen name="line_spacing_extra">3dp</dimen>
+    <dimen name="initial_info_margin">40dp</dimen>
+    <dimen name="item_overview_inversiones_height">72dp</dimen>
+
+    <!-- Cuentas -->
+    <dimen name="spacing_cuentas_big">32dp</dimen>
+    <dimen name="spacing_cuentas_normal">16dp</dimen>
+    <dimen name="spacing_cuentas_small">8dp</dimen>
+    <dimen name="overview_button_radius">8dp</dimen>
+
+
+    <dimen name="bottomsheet_height">320dp</dimen>
+    <dimen name="item_acceso_padding_horizontal">8dp</dimen>
+    <dimen name="item_acceso_padding_vertical">24dp</dimen>
+    <dimen name="item_acceso_directo_text_margin_top">8dp</dimen>
+    <dimen name="radius_border_bottonsheet">18dp</dimen>
+    <dimen name="csat_welcome_top_margin">156dp</dimen>
+    <dimen name="csat_welcome_message_width">278dp</dimen>
+    <dimen name="stroke_width_1dp">1dp</dimen>
+    <dimen name="csat_ending_top_margin">80dp</dimen>
+    <dimen name="csat_score_margin_top">124dp</dimen>
+
+    <!-- DIMEN SP -->
+    <dimen name="dimen12sp">12sp</dimen>
+    <dimen name="dimen14sp">14sp</dimen>
+    <dimen name="dimen16sp">16sp</dimen>
+    <dimen name="dimen18sp">18sp</dimen>
+    <dimen name="dimen20sp">20sp</dimen>
+    <dimen name="dimen30sp">30sp</dimen>
+    <dimen name="dimen40sp">40sp</dimen>
+    <dimen name="dimen48sp">48sp</dimen>
+
+    <!-- DIMEN DP -->
+    <dimen name="dimen1dp">1dp</dimen>
+    <dimen name="dimen2dp">2dp</dimen>
+    <dimen name="dimen3dp">3dp</dimen>
+    <dimen name="dimen4dp">4dp</dimen>
+    <dimen name="dimen6dp">6dp</dimen>
+    <dimen name="dimen7dp">7dp</dimen>
+    <dimen name="dimen8dp">8dp</dimen>
+    <dimen name="dimen10dp">10dp</dimen>
+    <dimen name="dimen12dp">12dp</dimen>
+    <dimen name="dimen14dp">14dp</dimen>
+    <dimen name="dimen15dp">15dp</dimen>
+    <dimen name="dimen16dp">16dp</dimen>
+    <dimen name="dimen18dp">18dp</dimen>
+    <dimen name="dimen20dp">20dp</dimen>
+    <dimen name="dimen22dp">22dp</dimen>
+    <dimen name="dimen24dp">24dp</dimen>
+    <dimen name="dimen28dp">28dp</dimen>
+    <dimen name="dimen32dp">32dp</dimen>
+    <dimen name="dimen40dp">40dp</dimen>
+    <dimen name="dimen42dp">42dp</dimen>
+    <dimen name="dimen44dp">44dp</dimen>
+    <dimen name="dimen47dp">47dp</dimen>
+    <dimen name="dimen48dp">48dp</dimen>
+    <dimen name="dimen50dp">50dp</dimen>
+    <dimen name="dimen56dp">56dp</dimen>
+    <dimen name="dimen57dp">57dp</dimen>
+    <dimen name="dimen62dp">62dp</dimen>
+    <dimen name="dimen72dp">72dp</dimen>
+    <dimen name="dimen80dp">80dp</dimen>
+    <dimen name="dimen95dp">95dp</dimen>
+    <dimen name="dimen96dp">96dp</dimen>
+    <dimen name="dimen100dp">100dp</dimen>
+    <dimen name="dimen134dp">134dp</dimen>
+    <dimen name="dimen150dp">150dp</dimen>
+    <dimen name="dimen155dp">155dp</dimen>
+    <dimen name="dimen232dp">232dp</dimen>
+
+    <!--Contacto-->
+    <dimen name="item_contacto_circulo">40dp</dimen>
+    <dimen name="item_skeleton_contacto_nombre_width">150dp</dimen>
+    <dimen name="item_skeleton_contacto_numero_width">70dp</dimen>
+    <dimen name="item_skeleton_contacto_height">72dp</dimen>
+
+    <!--Opciones Transferencia-->
+    <dimen name="item_skeleton_transferencia_label_width">160dp</dimen>
+    <dimen name="item_skeleton_transferencia_circulo">40dp</dimen>
+    <dimen name="item_skeleton_titulo_opcion_width">200dp</dimen>
+
+    <!--Historial de Transferencias-->
+    <dimen name="new_transfer_button_height">72dp</dimen>
+    <dimen name="new_transfer_arrow_size">25dp</dimen>
+    <dimen name="new_transfer_ic">48dp</dimen>
+    <dimen name="sk_new_transfer_text_button_width">150dp</dimen>
+
+    <dimen name="dimen200dp">200dp</dimen>
+    <dimen name="dimen210dp">210dp</dimen>
+    <dimen name="dimen225dp">225dp</dimen>
+    <dimen name="dimen255dp">255dp</dimen>
+    <dimen name="dimen240dp">240dp</dimen>
+    <dimen name="dimen380dp">380dp</dimen>
+    <dimen name="dimen410dp">410dp</dimen>
+    <dimen name="view_height">130</dimen>
+</resources>

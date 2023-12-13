@@ -19,9 +19,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="left"
-            android:tint="?android:textColorTertiaryInverse"
-         />
-
+            android:tint="?android:textColorTertiaryInverse"/>
 
         <TextView
             android:id="@+id/pago_qr_toolbar_text"
@@ -34,7 +32,6 @@
             android:textSize="16sp"
             android:textStyle="normal" />
 
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/pago_qr_toolbar_close"
             android:layout_width="24dp"
@@ -42,9 +39,8 @@
             android:layout_gravity="right"
             android:layout_marginRight="16dp"
             android:tint="?attr/colorAccent" />
-
-
     </androidx.appcompat.widget.Toolbar>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_main"
         android:layout_width="match_parent"
@@ -53,8 +49,7 @@
         android:background="@drawable/fondo"
         app:layout_constraintBottom_toTopOf="@id/btn_play_gamification"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <View
             android:layout_width="match_parent"
@@ -76,7 +71,7 @@
             <ImageView
                 android:id="@+id/card01"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp"
                 android:scaleType="fitXY"
@@ -88,7 +83,7 @@
             <ImageView
                 android:id="@+id/card0"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -100,7 +95,7 @@
             <ImageView
                 android:id="@+id/card1"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -112,7 +107,7 @@
             <ImageView
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -124,7 +119,7 @@
             <ImageView
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginBottom="8dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/new_blue_game"
@@ -135,7 +130,7 @@
             <ImageView
                 android:id="@+id/card4"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -147,7 +142,7 @@
             <LinearLayout
                 android:id="@+id/card5"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -189,7 +184,7 @@
             <ImageView
                 android:id="@+id/card6"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -201,7 +196,7 @@
             <ImageView
                 android:id="@+id/card7"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -213,7 +208,7 @@
             <ImageView
                 android:id="@+id/card8"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -225,7 +220,7 @@
             <ImageView
                 android:id="@+id/card9"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
@@ -237,7 +232,7 @@
             <ImageView
                 android:id="@+id/card10"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
+                android:layout_height="@dimen/dimen155dp"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
