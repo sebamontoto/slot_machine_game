@@ -67,7 +67,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     private fun createAnimation(): TranslateAnimation {
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
-        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.95).toFloat()
+        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.90).toFloat()
 
 
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
