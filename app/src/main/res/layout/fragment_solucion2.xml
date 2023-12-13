@@ -4,6 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/pago_qr_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pago_qr_toolbar_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left"
+            android:tint="?android:textColorTertiaryInverse"
+         />
+
+
+        <TextView
+            android:id="@+id/pago_qr_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Jugá y ganá con tu compra"
+            android:textColor="#292b2f"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pago_qr_toolbar_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="16dp"
+            android:tint="?attr/colorAccent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_main"
         android:layout_width="match_parent"
@@ -18,7 +59,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/vidrio"
+            android:background="@drawable/glass_edited"
             android:elevation="2dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
