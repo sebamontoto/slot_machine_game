@@ -241,7 +241,7 @@
     <dimen name="dimen100dp">100dp</dimen>
     <dimen name="dimen134dp">134dp</dimen>
     <dimen name="dimen150dp">150dp</dimen>
-    <dimen name="dimen155dp">155dp</dimen>
+    <dimen name="dimen_card_gamification">140dp</dimen>
     <dimen name="dimen232dp">232dp</dimen>
 
     <!--Contacto-->

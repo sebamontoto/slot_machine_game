@@ -55,7 +55,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/glass_edited"
+            android:background="@drawable/vidrio_5"
             android:elevation="2dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,11 +72,11 @@
             <ImageView
                 android:id="@+id/card01"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_blue_game"
+                android:src="@drawable/card_blue_png"
                 app:layout_constraintBottom_toTopOf="@id/card0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -84,11 +84,11 @@
             <ImageView
                 android:id="@+id/card0"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_purple_game"
+                android:src="@drawable/card_purple_png"
                 app:layout_constraintBottom_toTopOf="@id/card1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -96,11 +96,11 @@
             <ImageView
                 android:id="@+id/card1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_green_game"
+                android:src="@drawable/card_green_png"
                 app:layout_constraintBottom_toTopOf="@id/card2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -108,11 +108,11 @@
             <ImageView
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_orange_game"
+                android:src="@drawable/card_orange_png"
                 app:layout_constraintBottom_toTopOf="@id/card3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -120,10 +120,10 @@
             <ImageView
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginBottom="8dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_blue_game"
+                android:src="@drawable/card_blue_png"
                 app:layout_constraintBottom_toTopOf="@id/card4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -131,11 +131,11 @@
             <ImageView
                 android:id="@+id/card4"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginBottom="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_purple_game"
+                android:src="@drawable/card_purple_png"
                 app:layout_constraintBottom_toTopOf="@id/card5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -143,7 +143,7 @@
             <LinearLayout
                 android:id="@+id/card5"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -160,7 +160,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
-                        android:src="@drawable/new_green_game" />
+                        android:src="@drawable/card_green_png" />
 
                     <TextView
                         android:id="@+id/txt_amount"
@@ -185,11 +185,11 @@
             <ImageView
                 android:id="@+id/card6"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_orange_game"
+                android:src="@drawable/card_orange_png"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card5" />
@@ -197,11 +197,11 @@
             <ImageView
                 android:id="@+id/card7"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_blue_game"
+                android:src="@drawable/card_blue_png"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card6" />
@@ -209,11 +209,11 @@
             <ImageView
                 android:id="@+id/card8"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_purple_game"
+                android:src="@drawable/card_purple_png"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card7" />
@@ -221,11 +221,11 @@
             <ImageView
                 android:id="@+id/card9"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_green_game"
+                android:src="@drawable/card_green_png"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card8" />
@@ -233,11 +233,11 @@
             <ImageView
                 android:id="@+id/card10"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen155dp"
+                android:layout_height="@dimen/dimen_card_gamification"
                 android:layout_marginTop="8dp"
                 android:layout_centerHorizontal="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/new_orange_game"
+                android:src="@drawable/card_orange_png"
                 app:layout_constraintBottom_toTopOf="@id/card9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

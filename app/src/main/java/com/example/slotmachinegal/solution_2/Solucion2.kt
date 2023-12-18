@@ -3,6 +3,7 @@ package com.example.slotmachinegal.solution_2
 import android.animation.ValueAnimator
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -28,8 +29,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     //region test3
     private fun test3() {
 
-
-
         binding.btnPlayGamification.setOnClickListener {
             val slideAnimation = createAnimation()
 
@@ -52,7 +51,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 slideAnimation.cancel()
                 makeAnimationBounce()
 
-            }, 4000)
+            }, 5000)
 
         }
     }
@@ -67,11 +66,18 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     private fun createAnimation(): TranslateAnimation {
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
-        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.90).toFloat()
+        val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.82).toFloat()
+        val screenHeightReducida2 =
+            ((resources.displayMetrics.heightPixels * 0.90) - resources.displayMetrics.density * 145).toFloat()
+        //val screenHeightReducida = (resources.displayMetrics.heightPixels
+        //        - (resources.displayMetrics.density * 100))
 
+        Log.e("Marshal", "screenHeight: $screenHeight")
+        Log.e("Marshal", "screenHeightReducida: $screenHeightReducida")
+        Log.e("Marshal", "screenHeightReducida2: $screenHeightReducida2")
 
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = 125 // duracion en milisegundos
+        slideAnimation.duration = (78.12).toLong() // duracion en milisegundos
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
         slideAnimation.interpolator = LinearInterpolator()
