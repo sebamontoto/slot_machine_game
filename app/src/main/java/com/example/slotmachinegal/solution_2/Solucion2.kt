@@ -1,6 +1,10 @@
 package com.example.slotmachinegal.solution_2
 
 import android.animation.ValueAnimator
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -22,6 +26,17 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     private lateinit var animation2: Animation
     private var isFrontOfCardShowing = true
 
+    private lateinit var mediaPlayer: MediaPlayer
+    private lateinit var soundPool: SoundPool
+    private var soundId: Int = 0
+    private var rate = 1.5f
+
+
+    private var time = 100
+    private var duration = 1000
+
+    private lateinit var countDownTimer: CountDownTimer
+
     override fun initialize() {
         test3()
     }
@@ -29,7 +44,25 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     //region test3
     private fun test3() {
 
+        mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_gamification)
+
+
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build())
+            .build()
+
+        val resourceId = resources.getIdentifier("sound_gamification", "raw", requireContext().packageName)
+        soundId = soundPool.load(requireContext(), resourceId, 1) ?: 0
+
+
         binding.btnPlayGamification.setOnClickListener {
+
+            playSoundSlotMachine(1000, 100)
+
             val slideAnimation = createAnimation()
 
             shuffleArrayImages()
@@ -50,10 +83,29 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             handler.postDelayed({
                 slideAnimation.cancel()
                 makeAnimationBounce()
+                soundPool.release()
+                countDownTimer.cancel()
 
             }, 5000)
 
         }
+    }
+
+    private fun playSoundSlotMachine(dur: Long, interval: Long) {
+        countDownTimer = object : CountDownTimer(dur, interval) {
+            override fun onTick(millisUntilFinished: Long) {
+                soundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1.0f)
+            }
+
+            override fun onFinish() {
+                countDownTimer.cancel()
+                time += 430
+                //duration = 1000
+                Log.e("Marshal", "onFinish: $time", )
+                playSoundSlotMachine(1000,time.toLong())
+            }
+        }
+        countDownTimer.start()
     }
 
     private  fun makeAnimation() {
@@ -64,13 +116,17 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         binding.card5.startAnimation(animation1)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.release()
+        soundPool.release()
+    }
+
     private fun createAnimation(): TranslateAnimation {
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
         val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.82).toFloat()
         val screenHeightReducida2 =
             ((resources.displayMetrics.heightPixels * 0.90) - resources.displayMetrics.density * 145).toFloat()
-        //val screenHeightReducida = (resources.displayMetrics.heightPixels
-        //        - (resources.displayMetrics.density * 100))
 
         Log.e("Marshal", "screenHeight: $screenHeight")
         Log.e("Marshal", "screenHeightReducida: $screenHeightReducida")
