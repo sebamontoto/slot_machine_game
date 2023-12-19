@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
+import android.widget.Toast
 import com.example.slotmachinegal.BaseFragment
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
@@ -61,7 +62,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
         binding.btnPlayGamification.setOnClickListener {
 
-            playSoundSlotMachine(1000, 100)
+            playSoundSlotMachine(2200, 100)
 
             val slideAnimation = createAnimation()
 
@@ -86,7 +87,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 soundPool.release()
                 countDownTimer.cancel()
 
-            }, 5000)
+            }, 5100)
 
         }
     }
@@ -100,8 +101,6 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             override fun onFinish() {
                 countDownTimer.cancel()
                 time += 430
-                //duration = 1000
-                Log.e("Marshal", "onFinish: $time", )
                 playSoundSlotMachine(1000,time.toLong())
             }
         }
@@ -123,6 +122,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
     }
 
     private fun createAnimation(): TranslateAnimation {
+        var duration = (400).toLong()
         val screenHeight = resources.displayMetrics.heightPixels.toFloat()
         val screenHeightReducida = (resources.displayMetrics.heightPixels * 0.82).toFloat()
         val screenHeightReducida2 =
@@ -133,7 +133,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         Log.e("Marshal", "screenHeightReducida2: $screenHeightReducida2")
 
         val slideAnimation = TranslateAnimation(0f, 0f, 0f, screenHeightReducida)
-        slideAnimation.duration = (78.12).toLong() // duracion en milisegundos
+        slideAnimation.duration = duration // duracion en milisegundos
         slideAnimation.repeatCount = Animation.INFINITE
         slideAnimation.repeatMode = Animation.RESTART
         slideAnimation.interpolator = LinearInterpolator()
@@ -152,7 +152,10 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
-                slideAnimation.duration = slideAnimation.duration * 2
+                duration += 300
+                if (duration >= 2200){
+                    slideAnimation.duration = (slideAnimation.duration * 2).toLong()
+                }
             }
         })
 
