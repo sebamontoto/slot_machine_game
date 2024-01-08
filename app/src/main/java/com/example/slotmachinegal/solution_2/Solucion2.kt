@@ -1,6 +1,7 @@
 package com.example.slotmachinegal.solution_2
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
@@ -15,9 +16,13 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.slotmachinegal.BaseFragment
+import com.example.slotmachinegal.MainActivity
 import com.example.slotmachinegal.R
 import com.example.slotmachinegal.databinding.FragmentSolucion2Binding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Binding::inflate), Animation.AnimationListener {
@@ -40,6 +45,8 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
     override fun initialize() {
         test3()
+
+
     }
 
     //region test3
@@ -56,13 +63,15 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
                 .build())
             .build()
 
-        val resourceId = resources.getIdentifier("sound_gamification", "raw", requireContext().packageName)
+        val resourceId = resources.getIdentifier("tirada_slot_final_2", "raw", requireContext().packageName)
         soundId = soundPool.load(requireContext(), resourceId, 1) ?: 0
 
 
         binding.btnPlayGamification.setOnClickListener {
 
-            playSoundSlotMachine(2200, 100)
+            playSoundSlotMachine(2200, 120)
+
+            Log.e("Marshal", "Valor time: $time")
 
             val slideAnimation = createAnimation()
 
@@ -84,7 +93,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
             handler.postDelayed({
                 slideAnimation.cancel()
                 makeAnimationBounce()
-                soundPool.release()
+                soundPool.stop(resourceId)
                 countDownTimer.cancel()
 
             }, 5100)
@@ -100,7 +109,7 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
 
             override fun onFinish() {
                 countDownTimer.cancel()
-                time += 430
+                time += 450
                 playSoundSlotMachine(1000,time.toLong())
             }
         }
@@ -113,6 +122,19 @@ class Solucion2 : BaseFragment<FragmentSolucion2Binding>(FragmentSolucion2Bindin
         animation2.setAnimationListener(this)
         animation1.setAnimationListener(this)
         binding.card5.startAnimation(animation1)
+
+        lifecycleScope.launch {
+            delay(1000)
+            binding.imgPrize.setImageDrawable(binding.imgPrize.drawable)
+        }
+
+        val img = binding.imgPrize.drawable
+        Log.e("Marshal", "makeAnimation: $img")
+
+        lifecycleScope.launch {
+            delay(1000)
+            binding.imgPrize.setImageDrawable(img)
+        }
     }
 
     override fun onDestroy() {
