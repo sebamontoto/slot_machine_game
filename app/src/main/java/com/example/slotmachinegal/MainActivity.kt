@@ -1,5 +1,6 @@
 package com.example.slotmachinegal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -17,5 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = Navigation.findNavController(this, R.id.fragmentHost)
+
     }
 }

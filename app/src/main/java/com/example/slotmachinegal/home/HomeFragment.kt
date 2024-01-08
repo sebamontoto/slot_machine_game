@@ -19,6 +19,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.btnThree.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_solucion2)
         }
+
+        binding.btnFour.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_saveFiles)
+        }
     }
 
 

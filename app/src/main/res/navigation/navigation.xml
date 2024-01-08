@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_homeFragment_to_solucion2"
             app:destination="@id/solucion2" />
+        <action
+            android:id="@+id/action_homeFragment_to_saveFiles"
+            app:destination="@id/saveFiles" />
     </fragment>
     <fragment
         android:id="@+id/otherSolutionFragment"
@@ -43,5 +46,9 @@
         android:name="com.example.slotmachinegal.solution_2.Solucion2"
         android:label="fragment_solucion2"
         tools:layout="@layout/fragment_solucion2" />
+    <fragment
+        android:id="@+id/saveFiles"
+        android:name="com.example.slotmachinegal.files.SaveFilesFragment"
+        android:label="SaveFiles" />
 
 </navigation>
