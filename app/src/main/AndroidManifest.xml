@@ -18,6 +18,12 @@
         android:theme="@style/Theme.SlotMachineGal"
         tools:targetApi="31">
         <activity
+            android:name=".files.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".files.FirstActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -34,8 +40,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/path_providers"
-                />
+                android:resource="@xml/path_providers" />
         </provider>
     </application>
 
