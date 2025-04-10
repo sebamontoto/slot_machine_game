@@ -1,6 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="atm_barcode_text_black">#2B2B2B</color>
+    <color name="accent_material_light">#FF4081</color>
+    <color name="primary_material_light">#222222</color>
+    <color name="primary_dark_material_light">#303F9F</color>
+    <color name="foreground_material_light">@color/black</color>
+    <color name="primary_text_default_material_light">#de222222</color>
+
+    <!-- Colores para segmentos -->
+    <!-- Classic / Massive -->
+    <color name="massive_action">#A84308</color>
+    <color name="massive_primary">#FA6400</color>
+    <color name="massive_primary_10">#FFF0E6</color>
+    <color name="massive_primary_20">#FEE0CC</color>
+    <color name="massive_primary_30">#FED1B3</color>
+    <color name="massive_dark">#C85000</color>
+    <color name="massive_dark_30">#EFCBB3</color>
+    <color name="massive_dark_50">#E4A880</color>
+    <color name="massive_dark_60">#DE9666</color>
+    <color name="massive_dark_80">#D37333</color>
+    <color name="massive_light">#FFF3EB</color>
+    <color name="massive_light_40">#FFF3EB</color>
+    <color name="massive_light_20">#FFF9F5</color>
+    <color name="massive_light_90">#FFE5D3</color>
+    <color name="massive_light_100">#FFE2CE</color>
+    <color name="massive_light_80">#FFE8D8</color>
+
+    <!-- Eminent -->
+    <color name="eminent_action">#194D81</color>
+    <color name="eminent_primary">#003973</color>
+    <color name="eminent_primary_10">#E6EBF1</color>
+    <color name="eminent_primary_20">#CCD7E3</color>
+    <color name="eminent_primary_30">#B3C4D5</color>
+    <color name="eminent_dark">#002041</color>
+    <color name="eminent_dark_30">#B3BCC6</color>
+    <color name="eminent_dark_50">#A8B2BD</color>
+    <color name="eminent_dark_60">#66798D</color>
+    <color name="eminent_dark_80">#33618F</color>
+    <color name="eminent_light">#D8E8F8</color>
+    <color name="eminent_light_40">#EFF6FC</color>
+    <color name="eminent_light_80">#E0EDF9</color>
+    <color name="eminent_light_20">#F7FAFE</color>
+    <color name="eminent_light_90">#DCEAF9</color>
+    <color name="eminent_light_100">#EFF4FC</color>
+
+    ----------------------------
+    <!-- Colores Neutrales -->
+    <color name="white">#ffffff</color>
+    <color name="grey_20">#f4f4f4</color>
+    <color name="grey_30">#EBEBF5</color>
+    <color name="grey_40">#bebebe</color>
+    <color name="grey_60">#6a6a6a</color>
+    <color name="grey_70">#545458</color>
+    <color name="grey_80">#2b2b2b</color>
+    <color name="black">#000000</color>
+    <color name="black_10">#E6E6E6</color>
+    <color name="black_20">#CCCCCC</color>
+    <color name="black_40">#999999</color>
+    <color name="black_60">#666666</color>
+    <color name="black_70">#4D4D4D</color>
+    <color name="black_80">#333333</color>
+
+    ----------------------------
+    <!-- Colores para acciones -->
+    <color name="error_color">#c51111</color>
+    <color name="error_color_10">#F9E7E7</color>
+    <color name="error_color_30">#EEB8B8</color>
+
+    <color name="success_color">#258825</color>
+    <color name="success_color_10">#E9F3E9</color>
+    <color name="success_color_30">#BEDBBE</color>
+
+    <color name="warning_color">#E99D09</color>
+    <color name="warning_color_10">#FDF5E6</color>
+    <color name="warning_color_20">#FFBE53</color>
+
+    <color name="pending">#3381ED</color>
+    <color name="warning_color_state">#F6D89D</color>
+
+    <color name="info_color">#2970bc</color>
+    <color name="info_color_10">#EAF1F8</color>
+    ----------------------------
+    <!-- Inversiones monto consolidado -->
+    <color name="color_plazo_fijo">#4d6b99</color>
+    <color name="color_fondos_fima">#bbc8dd</color>
+    <color name="color_bonos_y_acciones">#7792bb</color>
+    ----------------------------
+    <!-- Otros Colores -->
+    <color name="one_color_unified">#BA350B</color>
+    <!-- Recargas -->
+    <color name="transparent">#00ffffff</color>
+    <color name="transparent_background">#612B2B2B</color>
+    <!-- Colores para tarjetas -->
+    <color name="tarjeta_black">#000000</color>
+    <color name="tarjeta_gold">#956B00</color>
+    <color name="tarjeta_platinum">#4D4D4D</color>
+    <color name="tarjeta_signature">#000000</color>
+    <color name="tarjeta_nacional_internacional">#1A4D81</color>
+    <color name="tarjeta_corporate">#4D4D4D</color>
+    <color name="tarjeta_business">#005D68</color>
+    <color name="tarjeta_classic">#7396ba</color>
+
+    <!-- Colores para Altas -->
+    <color name="raisin_black">#14212121</color>
+    <color name="eerie_black">#21212114</color>
+    <color name="charleston_green">@color/grey_80</color>
+    <color name="granite_gray">#666666</color>
+    <color name="dim_gray">#6A6A6A</color>
+    <color name="white_smoke">#F8F8F8</color>
+    <color name="verde_manzana">#4CAF50</color>
+    <color name="antiflash_white">#F0F0F0</color>
+    <color name="giants_orange">#FF5722</color>
+    <color name="dark_charcoal">#333333</color>
+    <color name="bright_navy_blue">#1976D2</color>
+    <color name="sky_blue">#1E90FF</color>
+    <color name="davys_gray">#555555</color>
+    <color name="fog_white">#FFFBFB</color>
+    <color name="raising_black">#222222</color>
+    <color name="gainsboro">#DDDDDD</color>
+    <color name="lime">#00FF00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="red_disgrace">#FF0000</color>
+    <color name="orange">#FFA500</color>
+    ----------------------------
+
+    <color name="material_pink">#E91E63</color>
+    <color name="material_light_green">#8BC34A</color>
+    <color name="material_red">#F44336</color>
+    <color name="result_red">#ea6e6e</color>
+
+    <!-- Extraction -->
+    <color name="extraction_status_pending">#c5dbf2</color>
+    <color name="extraction_status_receive">#bae8c4</color>
+    <color name="extraction_status_cancel">#fac8c8</color>
+
+    <color name="green">#53EA9A</color>
+    <color name="red">#FF3333</color>
+    <color name="enter_address_selector_text_enable">#666666</color>
+    <color name="enter_address_selector_text_disable">#999999</color>
+
+    <!-- Colores para Claves -->
+    <color name="socialnet_sdk_disabled">#adadad</color>
+    <color name="socialnet_sdk_subtext">#565656</color>
+
 </resources>

@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_homeFragment_to_saveFiles"
             app:destination="@id/saveFiles" />
+        <action
+            android:id="@+id/action_homeFragment_to_nfcPay"
+            app:destination="@id/nfcPay" />
     </fragment>
     <fragment
         android:id="@+id/otherSolutionFragment"
@@ -50,5 +53,10 @@
         android:id="@+id/saveFiles"
         android:name="com.example.slotmachinegal.files.SaveFilesFragment"
         android:label="SaveFiles" />
+    <fragment
+        android:id="@+id/nfcPay"
+        android:name="com.example.slotmachinegal.nfc.NfcPay"
+        android:label="fragment_nfc_pay"
+        tools:layout="@layout/fragment_nfc_pay" />
 
 </navigation>
