@@ -115,9 +115,11 @@
                     android:text="Adicional"
                     android:textColor="@color/massive_dark"
                     android:textSize="@dimen/dimen10dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@id/txt_card_number"
                     app:layout_constraintStart_toEndOf="@id/txt_card_number"
-                    app:layout_constraintTop_toTopOf="@id/txt_card_number" />
+                    app:layout_constraintTop_toTopOf="@id/txt_card_number"
+                    tools:visibility="visible" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_horizontal_1"
@@ -235,6 +237,7 @@
             android:scaleType="centerCrop"
             android:tint="?colorAccent"
             android:visibility="visible"
+            tools:lottie_rawRes="@raw/nfc_success_lottie"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
