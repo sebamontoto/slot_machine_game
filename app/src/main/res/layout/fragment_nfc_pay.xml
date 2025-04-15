@@ -193,6 +193,8 @@
                     android:paddingStart="8dp"
                     android:paddingTop="2dp"
                     android:paddingEnd="8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
                     android:paddingBottom="2dp"
                     android:text="12 cuotas sin interés"
                     android:textAlignment="center"

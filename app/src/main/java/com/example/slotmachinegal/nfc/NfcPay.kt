@@ -111,8 +111,8 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
         // Posición inicial fuera de la tarjeta
         //shine.alpha = 0f //comienza invisible
         shine.alpha = 1f //comienza visible
-        shine.translationX = -200f
-        shine.translationY = -200f
+        shine.translationX = -card.width.toFloat()
+        shine.translationY = -card.height.toFloat()
 
         val tiltBack = ObjectAnimator.ofFloat(card, "rotationX", 0f, tiltAngleCard).apply {
             duration = durationTilt
@@ -139,8 +139,8 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
         // Movimiento del reflejo de arriba a la izquierda hacia abajo a la derecha
         val moveShineIn = AnimatorSet().apply {
             playTogether(
-                ObjectAnimator.ofFloat(shine, "translationX", -200f, card.width * -0.05f),
-                ObjectAnimator.ofFloat(shine, "translationY", -200f, card.height * -0.05f)
+                ObjectAnimator.ofFloat(shine, "translationX", -card.width * 0.5f, card.width * -0.05f),
+                ObjectAnimator.ofFloat(shine, "translationY", -card.height * 0.5f, card.height * -0.05f)
             )
             duration = durationShine
             interpolator = AccelerateDecelerateInterpolator()
@@ -150,8 +150,8 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
         // Movimiento del reflejo de arriba a la izquierda hacia abajo a la derecha
         val moveShineOut = AnimatorSet().apply {
             playTogether(
-                ObjectAnimator.ofFloat(shine, "translationX", card.width * -0.05f, -200f),
-                ObjectAnimator.ofFloat(shine, "translationY", card.height * -0.05f, -200f)
+                ObjectAnimator.ofFloat(shine, "translationX", card.width * -0.05f, -card.width * 0.5f),
+                ObjectAnimator.ofFloat(shine, "translationY", card.height * -0.05f, -card.height * 0.5f)
             )
             duration = durationShine
             interpolator = AccelerateDecelerateInterpolator()
