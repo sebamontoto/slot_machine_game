@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/grey_20">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/view_generic_toolbar_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <!-- Header BottomSheet -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_bottomsheet"
+        android:paddingTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <ImageView
+            android:id="@+id/ic_arrow_bottomsheet"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_up_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="Pago de transporte"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/ic_arrow_bottomsheet"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/header_bottomsheet">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen16dp"
+            android:layout_marginTop="@dimen/dimen22dp"
+            android:layout_marginEnd="@dimen/dimen16dp"
+            android:layout_marginBottom="@dimen/dimen22dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="0dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_modo_payment_border"
+                    android:paddingStart="@dimen/dimen16dp"
+                    android:paddingEnd="@dimen/dimen16dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/txt_title_qr"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autoSizeMaxTextSize="18dp"
+                            android:autoSizeMinTextSize="12sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:ellipsize="none"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:maxLines="1"
+                            android:text="@string/pagos_qr_mostra_tu_qr_terminal"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:targetApi="o" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/img_logo_transport"-->
+                        <!--                            android:layout_width="70dp"-->
+                        <!--                            android:layout_height="70dp"-->
+                        <!--                            android:contentDescription="@string/una_imagen"-->
+                        <!--                            android:elevation="5dp"-->
+                        <!--                            android:padding="10dp"-->
+                        <!--                            android:scaleType="centerCrop"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="@id/img_qr"-->
+                        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                            app:layout_constraintTop_toBottomOf="@id/txt_title_qr"-->
+                        <!--                            app:layout_constraintTop_toTopOf="@id/img_qr"-->
+                        <!--                            android:src="@drawable/ic_galicia_eminent" />-->
+
+                        <ImageView
+                            android:id="@+id/img_qr"
+                            android:layout_width="220dp"
+                            android:layout_height="220dp"
+                            android:layout_marginTop="@dimen/dimen16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txt_title_qr"
+                            tools:src="@drawable/vqr_placeholder" />
+
+                        <View
+                            android:id="@+id/view_gray_line_qr"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/grey_20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_qr" />
+
+                        <TextView
+                            android:id="@+id/txt_subtitle_qr"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:ellipsize="none"
+                            android:fontFamily="@font/inter_regular"
+                            android:maxLines="1"
+                            android:text="@string/pagos_qr_genera_uno_nuevo"
+                            android:textColor="@color/black_80"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view_gray_line_qr" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_generate_qr"
+                            style="@style/buttonPagosQr"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="@dimen/dimen16dp"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginBottom="@dimen/dimen16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txt_subtitle_qr">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="2dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_qr_button"
+                                    android:layout_width="@dimen/dimen20dp"
+                                    android:layout_height="@dimen/dimen20dp"
+                                    android:elevation="3dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/txt_viaje_qr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:elevation="2dp"
+                                    android:fontFamily="@font/inter_semi_bold"
+                                    android:gravity="center"
+                                    android:text="@string/pagos_qr_btn_generar_nuevo_qr"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/dimen14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/img_qr_button"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen24dp"
+                android:background="@color/white"
+                android:elevation="0dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_view_qr">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_modo_payment_border"
+                    android:paddingStart="@dimen/dimen16dp"
+                    android:paddingEnd="@dimen/dimen16dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/txt_title_account"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autoSizeMaxTextSize="18sp"
+                            android:autoSizeMinTextSize="12sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:ellipsize="none"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:maxLines="1"
+                            android:text="@string/pagos_qr_paga_cuenta_principal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/frame_account_pay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_title_account">
+
+<!--                            <include-->
+<!--                                android:id="@+id/frame_account"-->
+<!--                                layout="@layout/modo_cuenta_item_transport"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/dimen20dp"-->
+<!--                                android:paddingStart="0dp" />-->
+
+<!--                            <include-->
+<!--                                android:id="@+id/account_skeleton"-->
+<!--                                layout="@layout/item_account_vqr_skeleton"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                tools:visibility="invisible" />-->
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/view_gray_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/grey_20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/frame_account_pay" />
+
+                        <TextView
+                            android:id="@+id/txt_subtitle_account"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="@dimen/dimen16dp"
+                            android:autoSizeMaxTextSize="12sp"
+                            android:autoSizeMinTextSize="10sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:ellipsize="none"
+                            android:fontFamily="@font/inter_regular"
+                            android:maxLines="1"
+                            android:text="@string/pagos_qr_el_pago_puede_tardar_en_debitarse"
+                            android:textColor="@color/black_80"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/view_gray_line" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/card_view_account" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

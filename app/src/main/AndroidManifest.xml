@@ -18,6 +18,9 @@
         android:theme="@style/Theme.SlotMachineGal"
         tools:targetApi="31">
         <activity
+            android:name=".qr_generator.QrTravelActivity"
+            android:exported="false" />
+        <activity
             android:name=".files.SecondActivity"
             android:exported="false" />
         <activity

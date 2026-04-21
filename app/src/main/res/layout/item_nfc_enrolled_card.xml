@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/enrolled_card_cv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_start_end_item_payment_methods"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_start_end_item_payment_methods"-->
+<!--            android:elevation="8dp"-->
+<!--            app:cardCornerRadius="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/enrolled_card_background"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/card_height_payment_methods"-->
+<!--                android:background="@color/massive_primary"-->
+<!--                android:paddingStart="@dimen/dimen16dp"-->
+<!--                android:paddingTop="@dimen/dimen20dp"-->
+<!--                android:paddingEnd="@dimen/dimen16dp"-->
+<!--                android:paddingBottom="@dimen/dimen12dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/enrolled_card_iv_bank"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:elevation="8dp"-->
+<!--                    android:scaleType="fitStart"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/guideline_vertical_1"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/guideline_horizontal_1"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="0.0"-->
+<!--                    tools:src="@drawable/ic_qr_pay_galicia_bank_test_flow" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/enrolled_card_txt_last_number"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/inter_semi_bold"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/dimen14sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    tools:text="* * * 1234" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/enrolled_card_txt_type"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/inter_regular"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/dimen11sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    tools:text="Crédito" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/enrolled_card_iv_brand"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:elevation="8dp"-->
+<!--                    android:scaleType="fitEnd"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/enrolled_card_txt_type"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="1.0"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/guideline_vertical_2"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_2"-->
+<!--                    app:layout_constraintVertical_bias="1.0"-->
+<!--                    tools:src="@drawable/ic_qr_brand_amex_white" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/enrolled_card_type_card"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:background="@drawable/border_type_card_qr_modo"-->
+<!--                    android:fontFamily="@font/inter_semi_bold"-->
+<!--                    android:gravity="center"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:paddingEnd="8dp"-->
+<!--                    android:text="@string/pagos_qr_type_card_additional"-->
+<!--                    android:textColor="?attr/colorDark"-->
+<!--                    android:textSize="@dimen/dimen10dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/enrolled_card_txt_last_number"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/enrolled_card_txt_last_number"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/enrolled_card_txt_last_number" />-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guideline_horizontal_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:layout_constraintGuide_percent="0.6" />-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guideline_vertical_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintGuide_percent="0.4" />-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guideline_horizontal_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintGuide_percent="0.62" />-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guideline_vertical_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:layout_constraintGuide_percent="0.77" />-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/enrolled_card_iv_favorite"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:layout_marginEnd="12dp"-->
+<!--            android:elevation="8dp"-->
+<!--            android:src="@drawable/ic_qr_pay_favorite"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/guideline2"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/enrolled_card_cv"-->
+<!--            app:layout_constraintTop_toTopOf="@id/guideline2" />-->
+
+<!--        <androidx.constraintlayout.widget.Guideline-->
+<!--            android:id="@+id/guideline2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintGuide_begin="20dp" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

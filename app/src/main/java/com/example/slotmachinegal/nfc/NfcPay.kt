@@ -4,11 +4,17 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
-import android.graphics.Rect
+import android.os.Bundle
+import android.transition.ChangeBounds
+import android.transition.ChangeImageTransform
+import android.transition.ChangeTransform
+import android.transition.TransitionSet
+import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import androidx.core.animation.doOnEnd
+import android.view.animation.PathInterpolator
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.airbnb.lottie.LottieDrawable
 import com.example.slotmachinegal.BaseFragment
@@ -19,9 +25,41 @@ import kotlinx.coroutines.launch
 
 class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflate) {
 
+    private val viewModel: MainViewModel by activityViewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val transition = TransitionSet().apply {
+            addTransition(ChangeBounds())
+            addTransition(ChangeTransform())
+            addTransition(ChangeImageTransform())
+            duration = 400
+            interpolator = AccelerateDecelerateInterpolator()
+        }
+
+        sharedElementEnterTransition = transition
+        sharedElementReturnTransition = transition
+    }
+
+
     override fun initialize() {
 
-        binding.containerGeneral.post {
+        binding.cardViewGeneral.transitionName = "shared_card_transition"
+
+
+        viewModel.cardModel.observe(viewLifecycleOwner){
+            binding.txtCardType.text = it.title
+            binding.txtCardNumber.text = it.number
+        }
+
+        val cardnumber = "12345678901234"
+        val cardnumber2 = "1234"
+
+        Log.e("Marshal", "initialize: ${cardnumber.takeLast(4)}", )
+        Log.e("Marshal", "initialize2: ${cardnumber2.takeLast(4)}", )
+
+        binding.cardViewGeneral.post {
             val card = binding.containerGeneral
             card.cameraDistance = 8000 * resources.displayMetrics.density
 
@@ -29,8 +67,12 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
             card.pivotY = card.height.toFloat()
             card.pivotX = card.width / 2f
 
-            startCardTiltAnimation4()
-            setLottiePending()
+            viewLifecycleOwner.lifecycleScope.launch {
+//                delay(1500)
+                startCardTiltAnimation4()
+                setLottiePending()
+            }
+
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -41,10 +83,13 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
         viewLifecycleOwner.lifecycleScope.launch {
             delay(12000)
             slideCardOutUp()
-            fadeOutLottie()
+            //fadeOutLottie()
+            binding.containerLottieText.fadeOut(400)
         }
 
+
     }
+
 
     private fun fadeOutLottie() {
         val containerLottieText = binding.containerLottieText
@@ -60,7 +105,11 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
         val lottieView = binding.animatedImageLector
         val text = binding.textLector
 
-        text.text = "Lectura correcta"
+        //fadeTextChange(text, "Lectura correcta")
+        //Con funcion de extension
+        text.fadeText("Lectura correcta", 150)
+
+        //text.text = "Lectura correcta"
 
         lottieView.setAnimation(R.raw.nfc_success_lottie)
 
@@ -97,10 +146,11 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
 
     private fun startCardTiltAnimation4() {
         val tiltAngleCard = 15f // Angulo inclinación tarjeta
-        val durationTilt = 500L //duración de la inclinación eje x (milisegundos)
-        val durationShine = 500L //duración del reflejo en forma de triangulo (milisegundos)
+        val durationTilt = 1000L //duración de la inclinación eje x (milisegundos)
+        val durationShine = 1000L //duración del reflejo en forma de triangulo (milisegundos)
+        val delayShineOut = 1000L //duración del delay del reflejo en forma de triangulo (milisegundos)
 
-        val card = binding.containerGeneral
+        val card = binding.cardViewGeneral
         val shine = binding.reflectionOverlay
 
         val density = resources.displayMetrics.density
@@ -155,7 +205,7 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
             )
             duration = durationShine
             interpolator = AccelerateDecelerateInterpolator()
-            startDelay = 500 //delay cuando comienza el reflejo
+            startDelay = delayShineOut //delay cuando comienza el reflejo
         }
 
         val animationSet = AnimatorSet().apply {
@@ -183,16 +233,35 @@ class NfcPay : BaseFragment<FragmentNfcPayBinding>(FragmentNfcPayBinding::inflat
     }
 
     private fun slideCardOutUp() {
-        val card = binding.containerGeneral
+        val card = binding.cardViewGeneral
 
         val animateUp = ObjectAnimator.ofFloat(
             card,"translationY",
             card.translationY, -card.height.toFloat() - card.y).apply {
             duration = 400
-            //interpolator = AccelerateDecelerateInterpolator() //suaviza el movimiento para un efecto más natural.
+            interpolator = PathInterpolator(0.95f, 0f, 0.25f, 1f) //acelearcion segun figma (ease-in-out-symetric)
         }
 
         animateUp.start()
+    }
+
+    private fun fadeTextChange(textView: TextView, newText: String) {
+        val fadeOut = ObjectAnimator.ofFloat(textView, "alpha", 1f, 0f).apply {
+            duration = 100
+        }
+
+        val fadeIn = ObjectAnimator.ofFloat(textView, "alpha", 0f, 1f).apply {
+            duration = 100
+        }
+
+        fadeOut.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                textView.text = newText
+                fadeIn.start()
+            }
+        })
+
+        fadeOut.start()
     }
 
 
